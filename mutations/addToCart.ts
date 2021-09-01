@@ -10,8 +10,6 @@ export default async function addToCart(
 ): Promise<CartItemCreateInput> {
   // 1. Query the current user and see if they're signed in
   const session = context.session as Session;
-  console.log('us', session.itemId);
-  console.log('pr', productId);
   if (!session.itemId) {
     throw new Error('You must be logged in to do this');
   }
@@ -21,11 +19,9 @@ export default async function addToCart(
     resolveFields: 'id,quantity',
   });
 
-  console.log('ci', allCartItems);
   // 3. See if the current item is in their cart
   const [existingCartItem] = allCartItems; // destructure the first item
   if (existingCartItem) {
-    console.log(existingCartItem);
     console.log(
       `There are already ${existingCartItem.quantity}, increment by 1!`
     );
