@@ -4,12 +4,12 @@ import { rules, isSignedIn } from '../access';
 
 export const Product = list({
   // TODO
-  access: {
+  /* access: {
     create: isSignedIn,
     read: rules.canReadProducts,
     update: rules.canManageProducts,
     delete: rules.canManageProducts,
-  },
+  }, */
 
   fields: {
     name: text({ isRequired: true }),

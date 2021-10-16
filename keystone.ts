@@ -45,7 +45,7 @@ export default withAuth(
   config({
     server: {
       cors: {
-        origin: [process.env.FRONTEND_URL, 'http://localhost:7777'],
+        origin: [process.env.FRONTEND_URL],
         credentials: true,
       },
     },
